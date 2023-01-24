@@ -1,0 +1,17 @@
+IV ← N||K; C ← λ;
+if A = λ, M = λ :
+    T ← TAG128(IV ⊕ 1); return (λ, T);
+c0 ← (M ≠ λ and r| |A|)? 1 : 2 : 3 : 4
+c1 ← (A ≠ λ and r| |M|)? 1 : 2 : 5 : 6
+if A ≠ λ :
+    IV ← HASHr(IV, A, c0);
+if M ≠ λ :
+    M1|| · · · ||Mm r←− M;
+    for i = 1 to m :
+        Y||Z (r,256−r) ←−−−−−−− PHOTON256(IV);
+        (W, Ci) ← ρ(Y, Mi);
+        IV ← WkZ;
+    IV ← IV ⊕ c1;
+    C ← C1|| · · · ||Cm;
+T ← TAG128(IV);
+return (C, T);
