@@ -108,19 +108,19 @@ def printState(state):
         print()
     
 
-def Permutation(state, r):
-    for i in range(r):
-        print(i,"############################")
+def Permutation(state):
+    for i in range(12):
+        # print(i,"############################")
         # if DEBUG:
         #     print("--- Round %d ---" % i)
         state = AddKey(state, i)
-        printState(state)
+        # printState(state)
         state = SubCell(state)
-        printState(state)
+        # printState(state)
         state = ShiftRow(state)
-        printState(state)
+        # printState(state)
         state = MixColumn(state)
-        printState(state)
+        # printState(state)
     return state
 
 
